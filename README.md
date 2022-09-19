@@ -6,7 +6,7 @@ installed soft:
 sudo pacman -S sway waybar
 ttf-font-awesome kitty mako wofi bg
 
-yay -S nwg-bar nwg-look swaylock-effects
+yay -S nwg-bar nwg-look swaylock-effects cava
 
 
 ![screen](https://user-images.githubusercontent.com/62457015/190975739-9c0ea70a-7757-4e1c-941e-1d214677d927.png)
