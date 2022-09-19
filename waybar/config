@@ -1,0 +1,120 @@
+{
+    "layer": "top",
+    "position": "top",
+    "margin": "5px",
+    "height": 28,
+    "modules-left": ["sway/workspaces", "sway/mode"],
+    "modules-center": ["sway/window", "custom/cmus"],
+    "modules-right": ["custom/weather", "network", "backlight", "pulseaudio","sway/language", "custom/clock","battery", "tray", "custom/power"],
+    "sway/workspaces": {
+    "disable-scroll": true,
+    "all-outputs": true,
+    "format": "{name}: {icon}",
+    "format-icons": {
+        "1": "",
+        "2": "",
+        "3": "",
+        "4": "",
+        "5": "",
+        "6": "",
+        "urgent": "",
+        "focused": "",
+        "default": ""
+      }
+    },
+    "sway/language": {
+        "format": " {}",
+    },
+    "custom/power": {
+      	"format":"",
+       	"on-click": "nwg-bar",
+      	"tooltip": false
+       },
+    "sway/mode": {
+        "format": " {}",
+        "max-length": 50
+    },
+    "sway/window": {
+        "format": "{}",
+        "max-length": 50,
+        "tooltip": false
+    },
+    "custom/cmus": {
+        "format": "  {}",
+        //"max-length": 15,
+        "interval": 10,
+        "exec": "cmus-remote -C \"format_print '%a - %t'\"", // artist - title
+        "exec-if": "pgrep cmus",
+        "on-click": "cmus-remote -u",                        //toggle pause
+        "escape": true                                       //handle markup entities
+    }, 
+    "bluetooth": {
+       "format": "{icon}",
+       "interval": 30,
+       "format-icons": {
+          "enabled": "",
+          "disabled": ""
+       },
+       "on-click": "blueman-manager",
+       "tooltip-format": "{}"
+    },
+    "backlight": {
+        "format": "<span foreground='#ffffff'>{icon}</span> {percent}%",
+        "format-icons": [""]
+    },
+    "pulseaudio": {
+    "format": "{volume}% {icon}",
+    "format-muted": "",
+    "format-icons": {
+        "headphone": "",
+        "default": ["", ""]
+    },
+    "scroll-step": 1
+    },
+    "battery": {
+        "format": "{capacity}% {icon}",
+        "format-icons": ["", "", "", "", ""]
+    },
+    "network": {
+	"format-ethernet": " eth: {ifname}",
+	"format-disconnected": "",
+	"tooltip-format": "{ifname} ({essid}): {ipaddr}",
+	"max-length": 100,
+	"on-click": "nm-connection-editor"
+    },
+    "custom/clock": {
+        "exec": "echo '  '$(date +'%H:%M | %e %b %Y')'  '",
+        "interval": 5
+    },
+    "cpu": {
+        "interval": 5,
+        "format": " cpu: {usage}% ({load})", // Icon: microchip
+        "states": {
+          "warning": 70,
+          "critical": 90
+          }
+    },
+    "memory": {
+        "interval": 30,
+        "format": " mem: {used:0.1f}G/{total:0.1f}G",
+        "states": {
+          "warning": 70,
+          "critical": 90
+        },
+    "on-click": "swaymsg exec foot htop"
+    },
+    "custom/weather": {
+    "exec": "curl 'https://wttr.in/?format=1'",
+    "interval": 3600
+    },
+    "disk": {
+        "interval": 30,
+        "format": " hdd: {free} Free",
+        "path": "/"
+    },
+    "tray": {
+        "icon-size": 21,
+        "spacing": 10
+    },
+}
+}

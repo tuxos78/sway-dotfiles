@@ -1,0 +1,8 @@
+mode=drun
+width=35%
+height=35%
+no_actions=true
+hide_scroll=true
+prompt=search
+term=alacritty
+image_size=25
