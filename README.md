@@ -1,6 +1,6 @@
 # sway-dotfiles
 
-My SwayDm config.
+My Sway config.
 installed soft:
 
 sudo pacman -S sway waybar
