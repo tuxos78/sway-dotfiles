@@ -9,10 +9,10 @@
 
 /* The whole bar */
 #waybar {
-    background: rgba (0, 0, 0, 0.7);
+    background: rgba (0, 0, 0, 0.8);
     color: white;
-    font-family: Cantarell, Noto Sans, sans-serif;
-    font-size: 12px;
+    font-family: FantasqueSansMono Nerd Font;
+    font-size: 13px;
 }
 
 window
@@ -31,9 +31,10 @@ window
 
 #workspaces button.focused {
     border-bottom: 3px solid #3d7180;
+    border-top:  3px solid #3d7180;
     border-color: #3d7180;
     color: white;
-    background-color: rgba (0, 0, 0, 0.5);
+    background-color: rgba (26, 27, 28, 0.5);
 }
 
 #workspaces button.urgent {
@@ -45,6 +46,13 @@ window
     background-color: #3d7180;
     border-bottom: 3px solid #ffffff;
 }
+
+#custom-menu {
+    padding-left: 20px;
+    padding-right: 30px;
+    border-bottom: 3px solid #3d7180;
+    border-top:  3px solid #3d7180;
+}    
 
 #custom-keyboard-layout,
 #custom-clock,
@@ -82,6 +90,8 @@ window
     color: white;
     border-bottom: 3px solid #3d7180;
     border-top:  3px solid #3d7180;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 #battery.charging {
@@ -123,6 +133,8 @@ label:focus {
 #cpu {
     border-bottom: 3px solid #3d7180;
     border-top:  3px solid #3d7180;
+    padding-left: 30px;
+    padding-right: 30px;
 }
 #custom-weather {
     border-bottom: 3px solid #3d7180;
@@ -185,7 +197,10 @@ label:focus {
     padding-right: 20px;
 }    
 #tray {
-    
+    border-bottom: 3px solid #3d7180;
+    border-top:  3px solid #3d7180;
+    padding-left: 30px;
+    padding-right: 30px;    
 }
 
 #idle_inhibitor {
