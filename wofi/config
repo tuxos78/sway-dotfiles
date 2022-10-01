@@ -4,5 +4,5 @@ height=35%
 no_actions=true
 hide_scroll=true
 prompt=search
-term=alacritty
+term=kitty
 image_size=25
