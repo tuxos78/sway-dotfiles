@@ -2,8 +2,8 @@
     "layer": "top",
     "position": "top",
     "margin": "5px",
-    "height": 28,
-    "modules-left": ["sway/workspaces", "sway/mode"],
+    "height": 32,
+    "modules-left": ["custom/menu", "sway/workspaces", "sway/mode"],
     "modules-center": ["sway/window", "custom/cmus"],
     "modules-right": ["custom/weather", "network", "backlight", "pulseaudio","sway/language", "custom/clock","battery", "tray", "custom/power"],
     "sway/workspaces": {
@@ -17,13 +17,19 @@
         "4": "",
         "5": "",
         "6": "",
+        "7": "",
         "urgent": "",
         "focused": "",
         "default": ""
       }
     },
+    "custom/menu": {
+    "format": "  ",
+    "on-click": "exec wofi --show drun -I",
+    "tooltip": false
+    },
     "sway/language": {
-        "format": " {}",
+        "format": "  {}",
     },
     "custom/power": {
       	"format":"",
