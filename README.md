@@ -4,7 +4,7 @@ My Sway config.
 installed soft:
 
 sudo pacman -S sway waybar
-ttf-font-awesome kitty mako wofi swaybg thunar polkit-gnome
+ttf-font-awesome kitty mako wofi swaybg thunar polkit-gnome xdg-user-dirs
 
 yay -S nwg-bar nwg-look swaylock-effects-git cava autotiling
 
