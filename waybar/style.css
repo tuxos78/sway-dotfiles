@@ -1,214 +1,212 @@
+@import "colors/latte.css";
+
+@keyframes blink-warning {
+    70% {
+        color: @wm_icon_bg;
+    }
+
+    to {
+        color: @wm_icon_bg;
+        background-color: @yellow;
+    }
+}
+
+@keyframes blink-critical {
+    70% {
+        color: @wm_icon_bg;
+    }
+
+    to {
+        color: @wm_icon_bg;
+        background-color: @red;
+    }
+}
+
 /* Reset all styles */
 * {
-    border: none;
-    border-radius: 20;
-    min-height: 0;
-    margin: 0;
-    padding: 0;
-}
-
-/* The whole bar */
-#waybar {
-    background: rgba (0, 0, 0, 0.8);
-    color: white;
+    border: 0px;
+    border-radius: 0px;
+    color: @sky;
+    padding:  0;
+    margin-right: 1px;
+    margin-left: 1px;
     font-family: FantasqueSansMono Nerd Font;
-    font-size: 13px;
+    font-size: 11px;
 }
 
-window
-#waybar.hidden {
+#window {
+    margin-left: 10px;
+    margin-bottom: 3px;
+}
+
+window#waybar {
+    background: rgba (0, 0, 0, 0);
+}
+
+window#waybar.hidden {
     opacity: 0.2;
 }
 
-
 #workspaces button {
-    /* To compensate for the top border and still have vertical centering */
-    padding-bottom: 2px;
-    padding-left: 10px;
-    padding-right: 10px;
-    color: #ffffff;
+    border-bottom: 0px;
+    border-color: @base;
+    border-style: solid;
+    margin-bottom: 3px;
 }
 
 #workspaces button.focused {
-    border-bottom: 3px solid #3d7180;
-    border-top:  3px solid #3d7180;
-    border-color: #3d7180;
-    color: white;
-    background-color: rgba (26, 27, 28, 0.5);
+    color: @sapphire;
+    border-color: @sapphire;
 }
 
 #workspaces button.urgent {
-    border-color: #c9545d;
-    color: #c9545d;
+    border-color: @red;
+    color: @red;
 }
 
 #mode {
-    background-color: #3d7180;
-    border-bottom: 3px solid #ffffff;
+    color: @yellow;
+    margin-bottom: 3px;
 }
 
-#custom-menu {
-    padding-left: 20px;
-    padding-right: 30px;
-    border-bottom: 3px solid #3d7180;
-    border-top:  3px solid #3d7180;
-}    
-
-#custom-keyboard-layout,
-#custom-clock,
+#clock,
+#custom-help,
+#custom-playerctl,
+#custom-power,
+#custom-wlsunset,
+#custom-clipboard,
+#custom-menu,
+#custom-dunst,
 #battery,
 #backlight,
-#bluetooth,
 #cpu,
-#custom-weather,
-#disk,
 #language,
 #memory,
-#temperature,
 #network,
+#bluetooth,
 #pulseaudio,
 #tray,
 #mode,
 #idle_inhibitor {
-    padding-left: 10px;
+    padding: 0 6px;
+    border-bottom: 0px;
+    border-style: solid;
+    margin-bottom: 3px;
+}
+
+#custom-menu {
+    color: @green;
+}
+
+#custom-wf-recorder {
+    color: @error_color;
     padding-right: 10px;
-    margin: 0 4px;
 }
 
-#custom-keyboard-layout {
-    border-bottom: 3px solid #3d7180;
-    border-top:  3px solid #3d7180;
+#tray {
+    padding-left: 5px;
+    padding-right: 5px;
+    color: @rosewater;
 }
 
-#custom-clock {
-    border-bottom: 3px solid #3d7180;
-    border-top:  3px solid #3d7180;
+#custom-playerctl {
+    color: @pink;
+}
+
+#custom-help {
+    color: @rosewater;
+}
+
+#custom-wlsunset {
+    color: @mauve;
+}
+
+#idle_inhibitor {
+    color: @red;
+}
+
+#custom-dunst {
+    color: @maroon;
+}
+
+#language {
+    color: @lavender;
+}
+
+#custom-clipboard {
+    color: @yellow;
+}
+
+#cpu {
+    color: @green;
+}
+
+#memory {
+    color: @teal;
+}
+
+#blacklight {
+    color: @sky;
 }
 
 #battery {
-    background-color: transparent;
-    color: white;
-    border-bottom: 3px solid #3d7180;
-    border-top:  3px solid #3d7180;
-    padding-left: 20px;
-    padding-right: 20px;
-}
-
-#battery.charging {
-    color: #ffffff;
-    background-color: #3d7180;
-}
-
-#backlight {
-    border-bottom: 3px solid #3d7180;
-    border-top:  3px solid #3d7180;
-    color: white;
-}
-
-#bluetooth {
-    border-bottom: 3px solid #3d7180;
-}
-
-@keyframes blink {
-    to {
-        background-color: #ffffff;
-        color: #000000;
-    }
-}
-
-#battery.critical:not(.charging) {
-    background-color: #f53c3c;
-    color: #000000;
-    animation-name: blink;
-    animation-duration: 0.5s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     animation-direction: alternate;
+    color: @sapphire;
+}
+
+
+#battery.warning {
+    color: @yellow;
+}
+
+#battery.critical {
+    color: @red;
+}
+
+#battery.warning.discharging {
+    animation-name: blink-warning;
+    animation-duration: 3s;
+}
+
+#battery.critical.discharging {
+    animation-name: blink-critical;
+    animation-duration: 2s;
 }
 
 label:focus {
     background-color: #000000;
 }
 
-#cpu {
-    border-bottom: 3px solid #3d7180;
-    border-top:  3px solid #3d7180;
-    padding-left: 30px;
-    padding-right: 30px;
-}
-#custom-weather {
-    border-bottom: 3px solid #3d7180;
-    border-top:  3px solid #3d7180;
-} 
-
-#disk {
-    border-bottom: 3px solid #3d7180;
-    border-top:  3px solid #3d7180;
-}
-
-#language {
-    border-bottom: 3px solid #3d7180;
-    border-top:  3px solid #3d7180;
-}
-
-#memory {
-    border-bottom: 3px solid #3d7180;
-    border-top:  3px solid #3d7180;
-}
-
-#custom-gpu-usage {
-    border-bottom: 3px solid #3d7180;
-    border-top:  3px solid #3d7180;
-}
-
 #network {
-    border-bottom: 3px solid #3d7180;
-    border-top:  3px solid #3d7180;
+    color: @sapphire;
 }
 
 #network.disconnected {
-    border-bottom: 3px solid #3d7180;
-    border-top:  3px solid #3d7180;
+    color: @wm_icon_bg
+}
+
+#bluetooth {
+    color: @blue;
+}
+
+#bluetooth.disabled {
+    color: @wm_icon_bg;
 }
 
 #pulseaudio {
-    border-bottom: 3px solid #3d7180;
-    border-top:  3px solid #3d7180;
+    color: @lavender;
 }
 
 #pulseaudio.muted {
-    border-bottom: 3px solid #3d7180;
-    border-top:  3px solid #3d7180;
+    color: @wm_icon_bg;
 }
 
-#temperature {
-    border-bottom: 3px solid #3d7180;
-    border-top:  3px solid #3d7180;
+#clock {
+    color: #ffffff;
 }
 
-#temperature.critical {
-    background-color: #eb4d4b;
-   
-}
 #custom-power {
-    border-bottom: 3px solid #3d7180;
-    border-top:  3px solid #3d7180;
-    padding-left: 20px;
-    padding-right: 20px;
-}    
-#tray {
-    border-bottom: 3px solid #3d7180;
-    border-top:  3px solid #3d7180;
-    padding-left: 30px;
-    padding-right: 30px;    
-}
-
-#idle_inhibitor {
-    background-color: #2d3436;
-    border-top:  3px solid #3d7180;
-}
-
-#idle_inhibitor.activated {
-    background-color: #ecf0f1;
-    color: #2d3436;
+    color: @subtext1;
 }
